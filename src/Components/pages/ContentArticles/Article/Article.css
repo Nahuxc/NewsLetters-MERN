@@ -1,0 +1,77 @@
+.card{
+    background-color: #212121;
+    box-shadow: 0 0 5px rgb(56, 56, 56);
+    border-radius: 15px;
+    margin: 60px 10px;
+    color: #ffffff;
+    width: 500px;
+}
+
+.card-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content img{
+    border-radius: 20px 20px 0px 0px;
+    object-fit: cover;
+}
+
+.card-content_btns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.card-content_texts{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px 20px;
+    word-break: break-all;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.dateText{
+    color: #75beff;
+}
+
+.card-content_texts span{
+    color: #a9a6a6;
+}
+
+.btn-info{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+
+
+    transition: all 500ms;
+
+}
+
+.btn-info:hover{
+    background-color: rgb(57, 120, 255);
+    color: white;
+}
+
+.stamp{
+    color: #6395ff;
+    text-align: center;
+}
+
+.stamp h4{
+    margin: 10px 0px;
+}

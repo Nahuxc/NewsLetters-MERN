@@ -1,0 +1,64 @@
+
+
+/* btns */
+
+.btnBack{
+    font-size: 50px;
+    color: white;
+
+    transition: all 500ms;
+}
+
+.btnBack:hover{
+    color: rgb(57, 120, 255);
+}
+
+
+.detail-content_btns{
+    margin: 10px 0px;
+}
+
+.btn-edit{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+
+
+    transition: all 500ms;
+
+}
+
+.btn-edit:hover{
+    background-color: rgb(57, 120, 255);
+    color: white;
+}
+
+.btn-delete{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+
+    transition: all 500ms;
+
+}
+
+.btn-delete:hover{
+    color: white;
+    background-color: rgb(255, 47, 47);
+}

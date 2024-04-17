@@ -1,0 +1,76 @@
+.box-home{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+    
+}
+
+.box-home-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: left;
+    gap: 50px;
+}
+
+.box-home-content_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-home-content_img img{
+    width: 500px;
+    animation: float 4s ease-in-out infinite;
+}
+
+
+
+
+.box-home-content_h1{
+    font-size: 60px;
+    font-family: "Inknut Antiqua", serif;
+    font-weight: bold;
+    line-height: 5rem;
+    text-shadow: 0 0 4px white;
+    animation: floatText 2s ease-in-out infinite;
+}
+
+.box-home-content_span{
+    font-size:  40px;
+    color: #ff7c7c;
+    text-shadow: 0 0 3px #fa5757;
+    font-family: "Inknut Antiqua", serif;
+    animation: floatText 2s ease-in-out infinite;
+}
+
+
+.box-home-textP{
+    margin-top: 30px;
+}
+
+.box-home-textP p{
+    font-size: 20px;
+}
+
+
+.btnGenerator{
+    text-decoration: none;
+    background-color: #fa6b6b;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    font-size: 25px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    transition: all 500ms;
+}
+
+.btnGenerator:hover{
+    color: black;
+    background-color: #ffffff;
+
+}

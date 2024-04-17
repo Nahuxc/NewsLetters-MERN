@@ -1,0 +1,82 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+
+  /* Poppins */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  color: white;
+  background-color: #100f0f;
+
+}
+
+
+/* section contenido de las paginas del router */
+.content-pages{
+  margin: 70px 20px;
+  padding: 0px 20px;
+}
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(233, 231, 227);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #ff7e7e;
+  padding: 10px;
+}
+
+
+/* animations */
+
+@keyframes float {
+  0%{
+      transform: translateY(0);
+  }
+
+  50%{
+      transform: translateY(-24px);
+  }
+
+  100%{
+      transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0%{
+      transform: scale(0);
+      opacity: 0;
+  }
+
+  100%{
+      transform: scale(1);
+  }
+}
+
+@keyframes floatText {
+  0%{
+      transform: translateY(0);
+  }
+
+  50%{
+      transform: translateY(-10px);
+  }
+
+  100%{
+      transform: translateY(0);
+  }
+}
+

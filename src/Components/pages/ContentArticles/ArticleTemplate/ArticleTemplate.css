@@ -1,0 +1,7 @@
+.cardForm{
+    background-color: #212121;
+    box-shadow: 0 0 5px rgb(56, 56, 56);
+    border-radius: 15px;
+    color: #ffffff;
+    width: 400px;
+}
