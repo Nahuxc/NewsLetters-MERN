@@ -13,9 +13,9 @@ export const PetitionData = async (url, methods, data_save = "", dataArch = fals
 
     }
 
-    if (methods == "GET" || methods == "DELETE") {
+    if ( methods == "DELETE") {
         options = {
-            method: "GET"
+            method: "DELETE"
         }
     }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useEffect, Fragment } from 'react'
 /* components and css styles */
 import Article from './Article/Article'
 import Loader from "./Loader/Loader.jsx"
@@ -8,42 +8,20 @@ import "./ContentArticles.css"
 /* librerias */
 import { Link } from 'react-router-dom'
 
-/* import helpers */
-import { Global } from '../../../helpers/Global.js'
-import { PetitionData } from '../../../helpers/PetitionData.js'
-
+/* importamos el context */
+import { useContext } from "react"
+import ArticlesContext from '../../context/ContextArticles.jsx'
 
 
 
 const ContentArticles = () => {
 
-  const [articles, setArticles] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  /* datos fetch */
-  const getDataApi = async () => {
-    try {
-
-      const { dataArray, loading } = await PetitionData(Global.url + "articles", "GET")
-
-      if (dataArray.status === "success") {
-        setArticles(dataArray.article)
-      }
-
-      setLoading(false)
-
-
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  const {getDataApi, articles, loading} = useContext(ArticlesContext)
 
   /* cargar datos */
   useEffect(() => {
     getDataApi()
   }, [])
-
-
 
   return (
     <Fragment>

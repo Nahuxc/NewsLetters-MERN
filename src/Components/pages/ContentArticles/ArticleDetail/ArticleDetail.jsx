@@ -1,47 +1,38 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-
-/* helpers */
-import { PetitionData } from '../../../../helpers/PetitionData'
 
 /* components */
 import ArticleItemDetail from './ArticleItemDetail'
 
-/* variables globales */
-import { Global } from '../../../../helpers/Global'
+/* import react icons */
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+
+/* react router */
+import { Link } from 'react-router-dom';
+
+/* importamos el context */
+import { useContext } from "react"
+import ArticlesContext from '../../../context/ContextArticles'
 
 
 const ArticleDetail = () => {
-    const [item, setItem] = useState([])
 
-    const {pid} = useParams() /* dato de la url */
-
-
-    const getDataApi = async (pid) => {
-        try {
-
-        /* dato de la api */
-        const { dataArray } = await PetitionData(Global.url + "article/"+pid, "GET")
-
-        if(dataArray.status === "success"){
-            setItem(dataArray.articleId) /* setear datos */
-        }
-
-
-        } catch (err) {
-        console.log(err);
-        }
-    }
+    /* pasamos las funciones y variables del context */
+    const {articles, getDataArticlesID} = useContext(ArticlesContext)
+    const {pid} = useParams()
 
     /* cargar datos */
     useEffect(() => {
-        getDataApi(pid)
+        getDataArticlesID(pid)
     }, [])
 
   return (
-    /* importacion de datos desde el fetch para mandarlos al ArticleItemDetail */
-    <div>
-        {<ArticleItemDetail {...item} />}
+      <div>
+        <div className='box-backbtn'>
+            <Link className='btnBack' to="/articles"> <FaArrowAltCircleLeft /> </Link>
+        </div>
+        {/* importacion de datos para mandarlos al ArticleItemDetail */}
+        {<ArticleItemDetail {...articles} />}
     </div>
   )
 }

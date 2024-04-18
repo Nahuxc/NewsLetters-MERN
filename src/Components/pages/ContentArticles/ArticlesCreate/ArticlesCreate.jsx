@@ -17,7 +17,7 @@ const ArticlesCreate = () => {
 
   const { formulario, cambiado } = useForm({})
 
-  const [result, setResult] = useState()
+  const [result, setResult] = useState("")
 
   const saveArticle = async (e) => {
     e.preventDefault()
@@ -30,11 +30,17 @@ const ArticlesCreate = () => {
     const { dataArray } = await PetitionData(Global.url + "articles/crear", "POST", newArticle);
 
     if (dataArray.status === "success") {
-      setResult(true) /* seteamos el resultado aprobado */
+      setResult("guardado")
+    }else{
+      setResult("no_enviado")
+    }
 
-      /* subimos la imagen */
+    /* subimos la imagen */
 
-      const fileInput = document.querySelector("#file")
+    const fileInput = document.querySelector("#file")
+
+    if (dataArray.status === "success" && fileInput.files[0] ) {
+      setResult("guardado") /* seteamos el resultado aprobado */
 
       const formData = new FormData() 
 
@@ -42,8 +48,10 @@ const ArticlesCreate = () => {
 
       const upload = await PetitionData(Global.url + "subir-img/" + dataArray.article._id, "POST", formData, true);
 
-      if (upload.status === "success") {
-        setResult(true)
+      if (upload.dataArray.status === "success") {
+        setResult("guardado")
+      }else{
+        setResult("no_enviado")
       }
     }
 
@@ -60,8 +68,8 @@ const ArticlesCreate = () => {
         {/* Formulario */}
         <div className='box-form'>
           <h3>Genera / Crea Tu Noticia</h3>
-          {result == true ? <Alert severity="success">Se Ha Creado La Noticia</Alert> : ""}
-          {result == false ? <Alert severity="error">No Se Ha Podido crear la Noticia.</Alert> : ""}
+          {result == "guardado" ? <Alert severity="success">Se Ha Creado La Noticia</Alert> : ""}
+          {result == "no_enviado" ? <Alert severity="error">No Se Ha Podido crear la Noticia.</Alert> : ""}
 
           <form className='form' onSubmit={saveArticle} >
 
@@ -81,7 +89,7 @@ const ArticlesCreate = () => {
             <p htmlFor="file0">Subir Imagen</p>
             <input className='inputFile' type="file" name="file0" id='file' />
 
-            <input className='btn-submit' type="submit" value="Crear | Generar" />
+            <input className='btn-submit' type="submit" value="Publicar NewsLetter" />
           </form>
         </div>
       </div>

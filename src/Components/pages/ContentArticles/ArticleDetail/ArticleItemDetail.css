@@ -1,4 +1,26 @@
+/* background */
 
+.box-detail{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.box-detail_content{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.box-detail_content-texts span{
+    color: rgb(183, 183, 183);
+}
+.date-detail{
+    color: rgb(28, 141, 255);
+}
+
+.img-article{
+    border-radius: 20px;
+}
 
 /* btns */
 
