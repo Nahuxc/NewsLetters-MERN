@@ -6,7 +6,7 @@ import Search from './Search/Search.jsx'
 import "./ContentArticles.css"
 
 /* librerias */
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 /* importamos el context */
 import { useContext } from "react"
@@ -15,12 +15,26 @@ import ArticlesContext from '../../context/ContextArticles.jsx'
 
 const ContentArticles = () => {
 
-  const {getDataApi, articles, loading} = useContext(ArticlesContext)
+  const {getDataApi, dataSearch, articles, dataCategory, loading} = useContext(ArticlesContext)
+
+  const {category} = useParams()
+
+  const {search} = useParams() 
+
+  console.log(search);
 
   /* cargar datos */
+
   useEffect(() => {
-    getDataApi()
-  }, [])
+    if(search){
+      dataSearch(search)
+    }else if(category){
+      dataCategory(category)
+    }else{
+      getDataApi()
+
+    }
+  }, [category, search])
 
   return (
     <Fragment>
@@ -33,6 +47,12 @@ const ContentArticles = () => {
               <p>Vamos Informar A la Gente sobre lo que ocurre el Mundo!</p>
             </div>
             <Link className='btnCreatelink' to="/generator">Crear</Link>
+          </div>
+          <div className='filter-category'>
+            <h2>Filtros:</h2>
+            <Link className='btnfilter' to={"/articles/Politica"}>Politica</Link>
+            <Link className='btnfilter' to={"/articles/Futbol"} >Futbol</Link>
+            <Link className='btnfilter' to={"/articles/Polemica"}>Polemica</Link>
           </div>
         </div>
           <div className='box-contentArticles'>

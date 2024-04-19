@@ -17,15 +17,15 @@ export const ContextArticles = ({children})=>{
     /* todos los datos del fetch */
     const getDataApi = async () => {
         try {
+            const { dataArray, loading } = await PetitionData(Global.url + "articles", "GET")
 
-        const { dataArray, loading } = await PetitionData(Global.url + "articles", "GET")
+            if (dataArray.status === "success") {
+                setArticles(dataArray.article)
+            }
 
-        if (dataArray.status === "success") {
-            setArticles(dataArray.article)
-        }
+            setLoading(false)
 
-        setLoading(false)
-
+            return dataArray.article
 
         } catch (err) {
         console.log(err);
@@ -43,6 +43,8 @@ export const ContextArticles = ({children})=>{
             setArticles(dataArray.articleId) /* setear datos */
         }
 
+        return dataArray.articleId
+
 
         } catch (err) {
         console.log(err);
@@ -50,13 +52,33 @@ export const ContextArticles = ({children})=>{
     }
 
 
+    /* obtener objetos por categoria */
+    const dataCategory = async (categoryParams) =>{
+        const data = await getDataApi()
+        const newData = data.filter(article => article.category == categoryParams)
+        setArticles(newData)
+      }
+
+
+      
+      const dataSearch =  async (params) =>{
+
+        const { dataArray } = await PetitionData(Global.url + "search/"+ params, "GET")
+
+        if(dataArray.status === "success"){
+            setArticles(dataArray.article) /* setear datos */
+        }
+
+        setLoading(false)
+      }
+
 
     /* eliminar articulos */
     const deleteArticle = async (id) =>{
         const { dataArray } = await PetitionData(Global.url + "article/" + articles._id, "DELETE")
 
         if(dataArray.status == "success"){
-            let articleUpdate = article.filter(article => article._id !== id)
+            let articleUpdate = articles.filter(article => article._id !== id)
 
             setArticles(articleUpdate)
         }
@@ -66,7 +88,7 @@ export const ContextArticles = ({children})=>{
 
 
     return(
-        <ArticlesContext.Provider value={{articles,loading, getDataApi, deleteArticle, getDataArticlesID}}>
+        <ArticlesContext.Provider value={{articles,setArticles, dataSearch, loading, getDataApi, deleteArticle, getDataArticlesID, dataCategory}}>
             {children}
         </ArticlesContext.Provider>
     )

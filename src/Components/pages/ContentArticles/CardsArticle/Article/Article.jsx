@@ -1,12 +1,16 @@
 import React from 'react'
 
+/* helper */
 import { Global } from '../../../../../helpers/Global'
 
+/* css styles */
 import "./Article.css"
+
+/* react router */
 import { Link } from 'react-router-dom'
 
 /* datos por props para crear la card */
-const Article = ({_id, title, content,creator, country, date, img}) => {
+const Article = ({_id, title, creator, country, date, img}) => {
 
   return (
     <div className='card'>

@@ -5,12 +5,14 @@ import { Global } from '../../../../../helpers/Global';
 
 import { useContext } from 'react';
 
+/* context */
 import ArticlesContext from '../../../../context/ContextArticles';
 
 /* notification */
 import { useNotification } from '../../../../../notification/notification';
 
-
+/* router */
+import { useNavigate, Link } from "react-router-dom";
 
 /* css styles */
 import "./ArticleItemDetail.css"
@@ -19,6 +21,8 @@ const ArticleItemDetail = ({_id, title, content, date, creator,category, country
 
   const {deleteArticle} = useContext(ArticlesContext)
   const { setNotification } = useNotification()
+
+  const navigate = useNavigate()
 
   return (
     <div className="box-detail">
@@ -41,9 +45,10 @@ const ArticleItemDetail = ({_id, title, content, date, creator,category, country
           </div>
           {/* btns */}
           <div className='detail-content_btns'>
-            <button className='btn-edit'>Editar</button>
+            <Link to={"/article/edit/"+_id} className='btn-edit'>Editar</Link>
             <button className='btn-delete' onClick={()=>{
               deleteArticle(_id)
+              navigate("/articles")
               setNotification("success", "se elimino correctamente el Articulo")
             }}>Borrar</button>
           </div>
