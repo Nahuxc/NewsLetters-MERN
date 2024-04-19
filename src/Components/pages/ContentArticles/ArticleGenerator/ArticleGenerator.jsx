@@ -1,7 +1,7 @@
 import React from 'react'
 
 /* components */
-import ArticlesCreate from '../ArticlesCreate/ArticlesCreate'
+import ArticlesCreate from './ArticleForms/ArticlesCreate/ArticlesCreate'
 
 
 const ArticleGenerator = () => {

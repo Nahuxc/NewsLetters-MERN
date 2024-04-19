@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 /* importamos el context */
 import { useContext } from "react"
-import ArticlesContext from '../../../context/ContextArticles'
+import ArticlesContext from '../../../../context/ContextArticles'
 
 
 const ArticleDetail = () => {

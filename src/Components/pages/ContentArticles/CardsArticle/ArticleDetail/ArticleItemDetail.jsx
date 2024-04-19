@@ -1,19 +1,24 @@
 import React from 'react'
 
 /* variables globales helpers */
-import { Global } from '../../../../helpers/Global';
+import { Global } from '../../../../../helpers/Global';
 
 import { useContext } from 'react';
 
-import ArticlesContext from '../../../context/ContextArticles';
+import ArticlesContext from '../../../../context/ContextArticles';
+
+/* notification */
+import { useNotification } from '../../../../../notification/notification';
+
 
 
 /* css styles */
 import "./ArticleItemDetail.css"
 
-const ArticleItemDetail = ({_id, title, content, date, creator, img }) => {
+const ArticleItemDetail = ({_id, title, content, date, creator,category, country, img }) => {
 
   const {deleteArticle} = useContext(ArticlesContext)
+  const { setNotification } = useNotification()
 
   return (
     <div className="box-detail">
@@ -28,8 +33,10 @@ const ArticleItemDetail = ({_id, title, content, date, creator, img }) => {
           {/* datos de la card */}
           <div className='box-detail_content-texts'>
               <h2> {title} </h2>
-              <span> {creator} </span>
-              <p className='date-detail'> {date} </p>
+              <span>Creador de la noticia: {creator} </span>
+              <p className='country-text'> Pais: {country} </p>
+              <p className='country-text'> Categoria: {category} </p>
+              <p className='date-detail'> Fecha de subida: {date} </p>
               <p> {content} </p>
           </div>
           {/* btns */}
@@ -37,6 +44,7 @@ const ArticleItemDetail = ({_id, title, content, date, creator, img }) => {
             <button className='btn-edit'>Editar</button>
             <button className='btn-delete' onClick={()=>{
               deleteArticle(_id)
+              setNotification("success", "se elimino correctamente el Articulo")
             }}>Borrar</button>
           </div>
         </div>

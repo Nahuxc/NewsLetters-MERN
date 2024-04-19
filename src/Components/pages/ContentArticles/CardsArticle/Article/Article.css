@@ -1,20 +1,20 @@
+
 .card{
-    background-color: #212121;
-    box-shadow: 0 0 5px rgb(56, 56, 56);
-    border-radius: 15px;
-    margin: 60px 10px;
-    color: #ffffff;
-    width: 500px;
+    margin: 10px;
 }
 
 .card-content{
+    background-color: #2b2b2b;
+    box-shadow: 0 0 5px rgb(1, 1, 1), 0 0 5px rgb(64, 64, 64);
+    color: #ffffff;
+    width: 400px;
     display: flex;
     flex-direction: column;
 }
 
 .card-content img{
-    border-radius: 20px 20px 0px 0px;
     object-fit: cover;
+    height: 300px;
 }
 
 .card-content_btns{
@@ -29,14 +29,24 @@
     flex-direction: column;
     gap: 15px;
     padding: 30px 20px;
-    word-break: break-all;
     font-size: 15px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
 }
 
+
+.card-content_texts h3{
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
 .dateText{
     color: #75beff;
+}
+
+.countryText{
+    color: #747475;
 }
 
 .card-content_texts span{

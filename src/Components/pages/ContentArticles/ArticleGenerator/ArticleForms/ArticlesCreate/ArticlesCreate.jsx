@@ -5,9 +5,9 @@ import Alert from '@mui/material/Alert';
 import "./ArticlesCreate.css"
 
 import { useState } from 'react'
-import { PetitionData } from "../../../../helpers/PetitionData"
-import { Global } from "../../../../helpers/Global"
-import { useForm } from "../../../../hooks/useForm"
+import { PetitionData } from "../../../../../../helpers/PetitionData"
+import { Global } from "../../../../../../helpers/Global"
+import { useForm } from "../../../../../../hooks/useForm"
 
 
 import ArticleTemplate from '../ArticleTemplate/ArticleTemplate';
@@ -73,13 +73,24 @@ const ArticlesCreate = () => {
 
           <form className='form' onSubmit={saveArticle} >
 
+            {/* input title */}
+            <p htmlFor='title'>Titulo:</p>
+            <input onChange={cambiado} type="text" name='title' placeholder='Titulo' />
+
+
+
             {/* input creator */}
             <p htmlFor='creator'>Creador:</p>
             <input onChange={cambiado} type="text" name='creator' placeholder='Usuario | creador' />
 
-            {/* input title */}
-            <p htmlFor='title'>Titulo:</p>
-            <input onChange={cambiado} type="text" name='title' placeholder='Titulo' />
+            {/* input Country */}
+            <p htmlFor='title'>Pais:</p>
+            <input onChange={cambiado} type="text" name='country' placeholder='Indique el Pais' />
+
+            {/* input category */}
+            <p htmlFor='title'>Categoria:</p>
+            <input onChange={cambiado} type="text" name='category' placeholder='Categoria' />
+
 
             {/* input content */}
             <p htmlFor="content" >Descripcion:</p>

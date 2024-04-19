@@ -10,7 +10,7 @@ import Footer from '../Components/layout/Footer/Footer'
 import ContentArticles from '../Components/pages/ContentArticles/ContentArticles'
 import LoaderInit from './LoaderInit/LoaderInit'
 import ArticleGenerator from '../Components/pages/ContentArticles/ArticleGenerator/ArticleGenerator'
-import ArticleDetail from '../Components/pages/ContentArticles/ArticleDetail/ArticleDetail'
+import ArticleDetail from "../Components/pages/ContentArticles/CardsArticle/ArticleDetail/ArticleDetail"
 
 const Router = () => {
 

@@ -5,6 +5,7 @@ import Router from "./Router/Router"
 
 /* importacion del context */
 import { ContextArticles } from "./Components/context/ContextArticles"
+import { NotificationProvider } from "./notification/notification"
 
 function App() {
 
@@ -12,7 +13,9 @@ function App() {
     <Fragment>
       {/* activamos el context en toda la app */}
       <ContextArticles>
-        <Router/>
+        <NotificationProvider>
+          <Router/>
+        </NotificationProvider>
       </ContextArticles>
     </Fragment>
   )

@@ -1,0 +1,12 @@
+.cardForm{
+    background-color: #2b2b2b;
+    box-shadow: 0 0 5px rgb(1, 1, 1), 0 0 5px rgb(64, 64, 64);
+    color: #ffffff;
+    width: 400px;
+}
+
+.cardForm p{
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}

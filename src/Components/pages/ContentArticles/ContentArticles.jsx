@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from 'react'
 /* components and css styles */
-import Article from './Article/Article'
+import Article from './CardsArticle/Article/Article.jsx'
 import Loader from "./Loader/Loader.jsx"
 import Search from './Search/Search.jsx'
 import "./ContentArticles.css"
@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 /* importamos el context */
 import { useContext } from "react"
 import ArticlesContext from '../../context/ContextArticles.jsx'
-
 
 
 const ContentArticles = () => {
@@ -36,26 +35,26 @@ const ContentArticles = () => {
             <Link className='btnCreatelink' to="/generator">Crear</Link>
           </div>
         </div>
-        <div className='contentArticles'>
-          {
-            loading ?
-              (
-                <div className='box-loading'>
-                  <Loader />
-                </div>
-              ) : (
-                articles.length >= 1 ? (
-                  articles.map((article) => {
-                    return <Article key={article._id} {...article} />
-                  })
-                ) : (
-                  <div className='box-not-articles'>
-                    <h2> No Hay Articulos <Link className='btn-notarticles' to="/generator"> Genera Tu articulo </Link> </h2>
-                  </div>
-                )
-              )
-          }
-        </div>
+          <div className='box-contentArticles'>
+          <h2>Las Noticias Creadas: </h2>
+            <div className='contentArticles'>
+              {
+                loading ?
+                  (
+                    <div className='box-loading'>
+                      <Loader />
+                    </div>
+                  ) : (
+                    articles.length >= 1 ? ( articles.map((article) => {return <Article key={article._id} {...article} />} )
+                    ) : (
+                      <div className='box-not-articles'>
+                        <h2> No Hay Articulos <Link className='btn-notarticles' to="/generator"> Genera Tu articulo </Link> </h2>
+                      </div>
+                    )
+                  )
+              }
+            </div>
+          </div>
       </div>
     </Fragment>
   )

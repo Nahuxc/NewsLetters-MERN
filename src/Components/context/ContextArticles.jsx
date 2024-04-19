@@ -1,5 +1,7 @@
 import { useState, createContext} from "react";
 
+
+
 /* import helpers */
 import { Global } from "../../helpers/Global.js";
 import { PetitionData } from "../../helpers/PetitionData.js";
@@ -10,7 +12,6 @@ export const ContextArticles = ({children})=>{
 
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(true)
-
 
 
     /* todos los datos del fetch */
@@ -52,9 +53,15 @@ export const ContextArticles = ({children})=>{
 
     /* eliminar articulos */
     const deleteArticle = async (id) =>{
-        alert(id)
         const { dataArray } = await PetitionData(Global.url + "article/" + articles._id, "DELETE")
-        console.log(dataArray);
+
+        if(dataArray.status == "success"){
+            let articleUpdate = article.filter(article => article._id !== id)
+
+            setArticles(articleUpdate)
+        }
+
+        setNotification("success", "Se Elimino Correctamente El Articulo")
       }
 
 
