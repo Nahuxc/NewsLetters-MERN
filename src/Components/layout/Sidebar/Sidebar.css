@@ -1,0 +1,50 @@
+
+.navbar-content-sidebar{
+    position: fixed;
+    top: 100px;
+    right: -240px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: hsla(0, 0%, 21%, 0.951);
+    box-shadow: 0 0 2px grey;
+
+    height: 40%;
+    gap: 50px;
+    z-index: 99;
+
+    transition: all 500ms;
+}
+
+.linksidebar{
+    text-decoration: none;
+    margin: 10px;
+    color: #ffffff;
+    padding: 10px 25px;
+    border: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    transition: all 500ms;
+    background-color: #fa6b6b;
+}
+
+.btn-sidebar{
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    text-align: center;
+    font-size: 50px;
+    background: none;
+    color: hsla(0, 0%, 100%, 0.76);
+    border: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.active{
+    right: 0;
+}
