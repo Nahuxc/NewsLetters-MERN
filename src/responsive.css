@@ -68,6 +68,17 @@
 }
 
 @media only screen and (max-width: 600px){
+
+    .box-backbtn{
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+    .box-backbtn h2{
+        padding: 10px;
+        font-size: 20px;
+    }
+
     .img-article{
         width: 300px;
     }
@@ -82,5 +93,16 @@
 
     .box2{
         font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 380px){
+
+    .box-home-content_h1{
+        font-size: 30px;
+    }
+
+    .content-pages{
+        padding: 0px;
     }
 }
