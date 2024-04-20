@@ -65,9 +65,17 @@
         padding: 20px 30px;
     }
 
+    .box-loading{
+        bottom: 250px;
+    }
+
 }
 
 @media only screen and (max-width: 600px){
+
+    .box-loading{
+        bottom: -350px;
+    }
 
     .box-backbtn{
         display: flex;
