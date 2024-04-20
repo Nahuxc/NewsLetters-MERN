@@ -11,11 +11,18 @@
     gap: 20px;
     background-color: #202020;
     box-shadow: 0 0 5px rgb(1, 1, 1), 0 0 5px rgb(64, 64, 64);
-    padding: 20px;
+    padding: 20px 100px;
+}
+
+.box-img-article{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .box-detail_content-texts{
     margin: 10px;
+    
 }
 
 .box-detail_content-texts span{
@@ -35,7 +42,6 @@
 .img-article{
     object-fit: cover;
     width: 800px;
-    border-radius: 20px;
 }
 
 /* btns */

@@ -19,9 +19,8 @@ const ContentArticles = () => {
 
   const {category} = useParams()
 
-  const {search} = useParams() 
+  const {search} = useParams()
 
-  console.log(search);
 
   /* cargar datos */
 

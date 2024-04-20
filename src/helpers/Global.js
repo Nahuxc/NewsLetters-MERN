@@ -1,5 +1,5 @@
 
 /* variables globales  */
 export const Global = {
-    url: "http://localhost:3000/api/"
+    url: "https://api-rest-blog-wc32.onrender.com/api/"
 }

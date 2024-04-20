@@ -1,7 +1,5 @@
 import { useState, createContext} from "react";
 
-
-
 /* import helpers */
 import { Global } from "../../helpers/Global.js";
 import { PetitionData } from "../../helpers/PetitionData.js";
@@ -60,7 +58,7 @@ export const ContextArticles = ({children})=>{
       }
 
 
-      
+      /* obtener datos por la busqueda */
       const dataSearch =  async (params) =>{
 
         const { dataArray } = await PetitionData(Global.url + "search/"+ params, "GET")

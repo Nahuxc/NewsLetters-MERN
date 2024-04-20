@@ -27,7 +27,7 @@ const ArticleItemDetail = ({_id, title, content, date, creator,category, country
   return (
     <div className="box-detail">
       <div className='box-detail_content'>
-        <div>
+        <div className='box-img-article'>
           {/* importacion de imagen si existe en la ruta */}
             {
               img ? <img className='img-article' src={Global.url + "img/" + img} alt={img} /> : ""
