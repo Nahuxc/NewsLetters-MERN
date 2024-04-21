@@ -3,6 +3,7 @@
 .box-detail{
     margin: 0 auto;
     width: 80%;
+    word-wrap: break-word;
 }
 
 .box-detail_content{
