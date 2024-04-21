@@ -1,6 +1,7 @@
 
 .card{
     margin: 10px;
+    word-wrap: break-word;
 }
 
 .card-content{
