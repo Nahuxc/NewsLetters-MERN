@@ -85,11 +85,26 @@ const ArticlesCreate = () => {
 
             {/* input Country */}
             <p htmlFor='title'>Pais:</p>
-            <input onChange={cambiado} type="text" name='country' placeholder='Indique el Pais' />
+  {/*           <input  type="text" name='country' placeholder='Indique el Pais' /> */}
+
+            <select onChange={cambiado} name="country" >
+              <option selected disabled>Elige Un Pais</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Mexico">Mexico</option>
+              <option value="España">España</option>
+            </select>
 
             {/* input category */}
             <p htmlFor='title'>Categoria:</p>
-            <input onChange={cambiado} type="text" name='category' placeholder='Categoria' />
+{/*             <input type="text" name='category' placeholder='Categoria' /> */}
+
+            <select onChange={cambiado}  name="category" >
+            <option selected disabled>Elige Una Categoria</option>
+              <option value="Polemica">Polemica</option>
+              <option value="Politica">Politica</option>
+              <option value="Futbol">Futbol</option>
+            </select>
 
 
             {/* input content */}

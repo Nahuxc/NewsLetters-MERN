@@ -102,16 +102,32 @@ const ArticlesEdit = () => {
 
               {/* input Country */}
               <p htmlFor='title'>Pais:</p>
-              <input onChange={cambiado} type="text" name='country' placeholder='Indique el Pais' defaultValue={articles.country} />
+              {/* <input onChange={cambiado} type="text" name='country' placeholder='Indique el Pais' defaultValue={articles.country} /> */}
+
+              <select onChange={cambiado} name="country" >
+              <option selected disabled>Elige Un Pais</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Mexico">Mexico</option>
+              <option value="España">España</option>
+            </select>
+
 
               {/* input category */}
               <p htmlFor='title'>Categoria:</p>
-              <input onChange={cambiado} type="text" name='category' placeholder='Categoria' defaultValue={articles.category} />
+              {/* <input onChange={cambiado} type="text" name='category' placeholder='Categoria'  /> */}
+
+              <select onChange={cambiado}  name="category" >
+              <option selected disabled>Elige Una Categoria</option>
+              <option value="Polemica">Polemica</option>
+              <option value="Politica">Politica</option>
+              <option value="Futbol">Futbol</option>
+            </select>
 
 
               {/* input content */}
               <p htmlFor="content" >Descripcion:</p>
-              <textarea onChange={cambiado} className='textArea' name='content' defaultValue={articles.content} placeholder='Descripcion'></textarea>
+              <textarea  onChange={cambiado} className='textArea' name='content' defaultValue={articles.content} placeholder='Descripcion'></textarea>
 
               {/* input Upload img */}
               <div>
